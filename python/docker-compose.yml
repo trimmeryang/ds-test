@@ -1,0 +1,15 @@
+services:
+
+  recruit:
+    container_name: recruit_python
+    image: recruit/python
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - .:/srv:cached
+    tty: true
+    deploy:
+      resources:
+        limits:
+          memory: 512M
